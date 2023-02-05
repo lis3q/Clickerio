@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap');
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+body {
+    background: var(--blue);
+    font-family: 'Roboto', sans-serif;
+}
+:root {
+    --blue: #4E737E;
+    --darkblue: #3A4E54;
+    --grey: #E4E4E4;
+    --darkgrey: #a3a3a3;
+    --yellow: #FFD600;
+}
+header i {
+    border-radius: 50%;
+    transition: all .2s ease-in-out;
+    padding: 10px 13px;
+    color: var(--grey);
+    font-size: 1.7em;
+    cursor: pointer;
+}
+header i.fa-cart-shopping {
+    padding: 11px;
+}
+header i:hover {
+    background: var(--blue);
+}
+header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    background: var(--darkblue);
+}
+header .money-bar {
+    background: #fff;
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+}
+header .money-bar i {
+    background: var(--yellow);
+    border-radius: 50%;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    margin-left: 15px;
+    margin-right: -45px;
+    cursor: default;
+}
+header .money-bar i:hover{ 
+    transform: none;
+}
+header .money-bar span {
+    font-weight: 900;
+    font-size: 1.3em;
+    color: var(--darkblue);
+    margin: 0 auto;
+    cursor: default;
+}
+
+.game {
+    width: 100%;
+    margin: 50px 0;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.game section {
+    width: 275px;
+    height: 350px;
+    background: var(--grey);
+    border-radius: 25px;
+    background: var(--darkblue);
+}
+.game section h1 {
+    color: var(--grey);
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.8em;
+}
+.game hr {
+    border: none;
+    height: 5px;
+    background: var(--blue);
+}
+.game .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0;
+}
+.game .content p {
+    font-size: 1.1em;
+    color: var(--grey);
+    margin: 3px 0;
+}
+.game .image {
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game .image img {
+    height: 200px;
+    cursor: pointer;
+    filter: drop-shadow(0px 4px 25px var(--darkblue));
+}
+.game .image img:active {
+    animation: scale 0.05s ease;
+}
+@keyframes scale {
+    0% { transform: scale(1) }
+    50% { transform: scale(0.98) }
+    100% { transform: scale(1) }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    z-index: 1;
+    background: var(--darkblue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer i {
+    color: var(--grey);
+    margin: 0 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
+/* Shop */
+.shop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    z-index: 2;
+    width: 100%;
+    background: var(--darkblue);
+    padding: 50px;
+    transform: translateY(-110%);
+    transition: all .4s ease-in-out;
+}
+.shop.active {
+    transform: translateY(0);
+}
+.shop i, span {
+    color: var(--grey);
+    font-weight: 600;
+    margin: 0 5px;
+    font-size: 1.7rem;
+}
+.shop i {
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 7px 9px;
+    border-radius: 50%;
+    transition: all .2s ease-in-out;
+}
+.shop i:hover {
+    background: var(--blue);
+}
+.shop .content {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.content .item {
+    background: var(--blue);
+    padding: 15px 25px;
+    border-radius: 5px;
+    min-width: 300px;
+}
+.item h3 {
+    color: var(--grey);
+    font-weight: 400;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.item h3 span {
+    font-size: 1.1rem;
+    border-left: 2px solid var(--darkblue);
+    padding-left: 7px;
+    font-weight: 300;
+}
+.item i {
+    font-size: 1rem;
+    color: var(--grey);
+    cursor: default;
+}
+.item button {
+    outline: none;
+    border: none;
+    height: 38px;
+    background: var(--darkblue);
+    border-radius: 3px;
+    color: var(--grey);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    width: 100%;
+}
+.item button:hover {
+    filter: brightness(85%);
+}
+
+
+/* Menu */
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    z-index: 2;
+    width: 100%;
+    background: var(--darkblue);
+    padding: 50px;
+    transform: translateY(-110%);
+    transition: all .4s ease-in-out;
+}
+.menu.active {
+    transform: translateY(0);
+}
+.menu i, span {
+    color: var(--grey);
+    font-weight: 600;
+    margin: 0 5px;
+    font-size: 1.7rem;
+}
+.menu i {
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 7px 9px;
+    border-radius: 50%;
+    transition: all .2s ease-in-out;
+}
+.menu i:hover {
+    background: var(--blue);
+}
+.menu .content {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.content ul {
+    list-style: none;
+}
+.content ul li {
+    color: var(--grey);
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+.content .theme {
+    padding: 2px 18px;
+    border-radius: 50%;
+    background: #fff;
+    margin: 0 7px;
+    cursor: pointer;
+}
+
+/* Color themes */
+.theme.red {
+    background: #d61e1e;
+}
+.theme.green {
+    background: #2eac29;
+}
+.theme.pink {
+    background: #bb2c89;
+}
+.theme.yellow {
+    background: #d3bf27;
+}
+.theme.orange {
+    background: #d85f2b;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+    .top, .stats {
+        display: none;
+    }
+    header {
+        padding: 0 20px;
+    }
+    header .money-bar {
+        width: 200px;
+    }
+    .game .image {
+        width: 100%;
+        border-radius: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

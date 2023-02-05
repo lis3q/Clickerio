@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <title>Clickerio | Clicker game</title>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="shop-icon"><i class="fa-solid fa-cart-shopping shop-btn-open"></i></div>
+        <div class="money-bar"><i class="fa-solid fa-dollar-sign"></i> <span class = "score">0</span></div>
+        <div class="menu-icon"><i class="fa-solid fa-bars menu-btn-open"></i></div>
+    </header>
+
+    <!-- Game section -->
+    <main>
+        <article class="game">
+            <section class="stats">
+                <h1>STATS</h1>
+                <hr>
+                <div class="content">
+                    <p class = "cps">Clicks per second: 1</p>
+                    <p class = "cpc">Clicks per click: 1</p>
+                </div>
+            </section>
+            <section class="image"><img draggable="false" onclick = "game()" class = "img" src = "cookie.png" alt = "cookie"></section>
+            <section class="top">
+                <h1>TOP 5</h1>
+                <hr>
+                <div class="content">
+                    <p>1. Ania - 5,695,394</p>
+                    <p>2. Krystian - 5,384,726</p>
+                    <p>3. Katarzyna - 4,957,124</p>
+                    <p>4. Maciej - 4,927,834</p>
+                    <p>5. Ania - 4,474,084</p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <a href = "#"><i class="fa-brands fa-instagram"></i></a>
+        <a href = "#"><i class="fa-brands fa-facebook"></i></a>
+        <a href = "#"><i class="fa-brands fa-github"></i></a>
+        <a href = "#"><i class="fa-brands fa-discord"></i></a>
+    </footer>
+
+    <!-- Shop -->
+    <article class="shop">
+        <i class="fa-solid fa-arrow-left shop-btn-close"></i><span>SHOP</span>
+        <section class="content">
+            <div class="item">
+                <h3>Clicks per second <span class = "price price-cps">300$</span></h3> 
+                <div class="buy-button"><button value = "300" class = "buy-btn">BUY</button></div>
+            </div>
+
+            <div class="item">
+                <h3>Clicks per click <span class = "price price-cpc">200$</span></h3> 
+                <div class="buy-button"><button value = "200" class = "buy-btn">BUY</button></div>
+            </div>
+        </section>
+    </article>
+
+    <!-- Menu -->
+    <article class = "menu">
+        <i class="fa-solid fa-arrow-left menu-btn-close"></i><span>MENU</span>
+        <section class="content">
+            <ul>
+                <li>Change theme:  
+                    <span class = "red theme" data-theme = "red"></span>
+                    <span class = "green theme" data-theme = "green"></span>
+                    <span class = "pink theme" data-theme = "pink"></span>
+                    <span class = "yellow theme" data-theme = "yellow"></span>
+                    <span class = "orange theme" data-theme = "orange"></span>
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>   
+        </section>
+    </article>
+
+    <script src = "script.js"></script>
+    
+</body>
+</html>
