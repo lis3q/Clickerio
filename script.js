@@ -1,18 +1,24 @@
+// Main variables
 const displayScore = document.querySelector(".score");
 const displayCps = document.querySelector(".cps");
+const displayCpc = document.querySelector(".cpc");
 const img = document.querySelector(".img");
 
 // Setting score onload
 var score = JSON.parse(localStorage.getItem("amount") || 0);
 displayScore.innerHTML = score;
 
-// Setting cps onload
+// Setting cps (clicks per second) onload
 var cps = JSON.parse(localStorage.getItem("cps") || 1);
 displayCps.innerHTML = "Clicks per second: " + cps;
 
+// Setting cpc (clicks per click) onload
+var cpc = JSON.parse(localStorage.getItem("cpc") || 1);
+displayCpc.innerHTML = "Clicks per click: " + cpc;
+
 // Clicking function
 function game() {
-    score += 1;
+    score += cpc;
     displayScore.innerHTML = score;
     localStorage.setItem("amount", score);
 }
@@ -32,8 +38,6 @@ const cpsbuy = document.querySelectorAll(".buy-btn");
 // Getting priceCps
 var priceCps = JSON.parse(localStorage.getItem("priceCps") || 200);
 document.querySelector(".price-cps").innerHTML = priceCps + "$";
-
-// Setting cps title
 displayCps.innerHTML = "Clicks per second: " + cps;
 
 // Click per second button
@@ -54,36 +58,40 @@ cpsbuy[0].addEventListener("click", () => {
 
         // Setting new value of cps
         cps += 1;
-        displayCps.innerHTML = "Clicks per second: " + cps;
         localStorage.setItem("cps", cps);
+        displayCps.innerHTML = "Clicks per second: " + cps;
     }
 })
 
-// var priceCpc = JSON.parse(localStorage.getItem("priceCpc" || "200$"));
-// document.querySelector(".price-cpc").innerHTML = localStorage.getItem("priceCps") + "$";
 
-// // Click per click button
-// cpsbuy[1].addEventListener("click", () => {
-//     if (score < priceCpc) {
-//         alert("Masz za mało pieniędzy!");
-//     }
-//     else {
-//         // Setting score
-//         score -= priceCpc;
-//         localStorage.setItem("amount", score);
-//         displayScore.innerHTML = score;
 
-//         // Setting new price
-//         priceCpc += 700;
-//         localStorage.setItem("priceCpc", priceCpc);
-//         document.querySelector(".price-cpc").innerHTML = localStorage.getItem("priceCpc") + "$";
+// Getting priceCpc
+var priceCpc = JSON.parse(localStorage.getItem("priceCpc") || 200);
+document.querySelector(".price-cpc").innerHTML = priceCpc + "$";
+displayCpc.innerHTML = "Clicks per click: " + cpc;
 
-//         // Setting new value of score
-//         score += 1;
-//         displayScore.innerHTML = "Clicks per click: " + score;
-//     }
-// })
+// Click per click button
+cpsbuy[1].addEventListener("click", () => {
+    if (score < priceCpc) {
+        alert("Masz za mało pieniędzy!");
+    }
+    else {
+        // Setting score
+        score -= priceCpc;
+        localStorage.setItem("amount", score);
+        displayScore.innerHTML = score;
 
+        // Setting new price
+        priceCpc *= 2;
+        localStorage.setItem("priceCpc", priceCpc);
+        document.querySelector(".price-cpc").innerHTML = priceCpc + "$";
+
+        // Setting new value of cpc
+        cpc += 1;
+        localStorage.setItem("cpc", cpc);
+        displayCpc.innerHTML = "Clicks per click: " + cpc;
+    }
+})
 
 // Open and close shop
 const shopBtnOpen = document.querySelector(".shop-btn-open");
@@ -109,6 +117,7 @@ menuBtnClose.addEventListener("click", () => {
     menu.classList.remove("active");
 })
 
+// Changing themes
 const themes = document.querySelectorAll(".theme");
 themes.forEach(theme => theme.addEventListener("click", () => {
     var colorTheme = theme.dataset.theme;
@@ -133,3 +142,10 @@ themes.forEach(theme => theme.addEventListener("click", () => {
         document.documentElement.style.setProperty('--darkblue', '#53543a'); 
     }
 }))
+
+
+// Music 
+const music = document.querySelector(".music");
+music.volume = 0;
+
+const musicBtn = document.querySelector("music-btn");

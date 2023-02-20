@@ -7,10 +7,13 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="icon.ico">
 
     <title>Clickerio | Clicker game</title>
 </head>
 <body>
+
+    <audio autoplay = "" loop = "" src = "music.mp3" class = "music"></audio>
 
     <!-- Header -->
     <header>
@@ -73,19 +76,24 @@
     <article class = "menu">
         <i class="fa-solid fa-arrow-left menu-btn-close"></i><span>MENU</span>
         <section class="content">
-            <ul>
-                <li>Change theme:  
+            <div class="setting">
+                <h3>Change theme</h3> 
+                <div class="themes">
                     <span class = "red theme" data-theme = "red"></span>
                     <span class = "green theme" data-theme = "green"></span>
                     <span class = "pink theme" data-theme = "pink"></span>
                     <span class = "yellow theme" data-theme = "yellow"></span>
                     <span class = "orange theme" data-theme = "orange"></span>
-                </li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>   
+                </div>
+            </div>  
+
+            <div class="setting">
+                <h3>Play music</h3> 
+                <label class="switch music-btn">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>  
         </section>
     </article>
 

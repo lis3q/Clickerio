@@ -1,0 +1,4 @@
+1. Pojawianie się +ilość przy kliknięciach
+2. Ustawianie motywu w localstorage
+3. Muzyka w tle 
+4. Opcja włączenia/wyłączenia muzyki w tle w ustawieniach

@@ -13,6 +13,60 @@ body {
     --darkgrey: #a3a3a3;
     --yellow: #FFD600;
 }
+
+/* Switch button */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 34px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: #21f344;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #21f344;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Header */
 header i {
     border-radius: 50%;
     transition: all .2s ease-in-out;
@@ -113,17 +167,16 @@ header .money-bar span {
     align-items: center;
 }
 .game .image img {
-    height: 200px;
+    height: 250px;
     cursor: pointer;
     filter: drop-shadow(0px 4px 25px var(--darkblue));
-    touch-action: manipulation;
 }
 .game .image img:active {
     animation: scale 0.05s ease;
 }
 @keyframes scale {
     0% { transform: scale(1) }
-    50% { transform: scale(0.98) }
+    50% { transform: scale(0.97) }
     100% { transform: scale(1) }
 }
 
@@ -268,15 +321,20 @@ footer i {
     flex-wrap: wrap;
     gap: 30px;
 }
-.content ul {
-    list-style: none;
+.content .setting {
+    background: var(--blue);
+    padding: 15px 25px;
+    border-radius: 5px;
+    min-width: 300px;
+    text-align: center;
 }
-.content ul li {
+.setting h3 {
     color: var(--grey);
-    font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
 }
-.content .theme {
+.themes .theme{
     padding: 2px 18px;
     border-radius: 50%;
     background: #fff;
@@ -321,5 +379,8 @@ footer i {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+    .game .image img {
+        height: 210px;
     }
 }
